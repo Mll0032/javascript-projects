@@ -1,5 +1,5 @@
 // Declare and assign the variables below
-let shuttlename = "Determination";
+let shuttleName = "Determination";
 let shuttleSpeedMph = 17500;
 let distanceToMarsKm = 225000000;
 let distanceToMoonKm = 384400;
@@ -11,7 +11,9 @@ console.log(typeof distanceToMarsKm);
 console.log(typeof distanceToMoonKm);
 console.log(typeof milesPerKilometer);
 // Calculate a space mission below
-
+let milesToMars = distanceToMarsKm*milesPerKilometer;
+let hoursToMars = milesToMars/shuttleSpeedMph;
+let daysToMars = hoursToMars/24;
 // Print the results of the space mission calculations below
 
 // Calculate a trip to the moon below
