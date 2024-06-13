@@ -1,8 +1,8 @@
 // Initialize Variables below
 let date = "Monday 2019-03-18";
 let time = "10:05:34 AM";
-let astronautCount = 8; 
-let astronautStatus = " Not ready";
+let astronautCount = 7; 
+let astronautStatus = "ready";
 let averageAstronautMassKg = 80.7;
 let crewMassKg = astronautCount * averageAstronautMassKg;
 let fuelMassKg = 760000;
@@ -30,6 +30,11 @@ if (astronautStatus === "ready") {
     console.log("Astronauts are not ready: DO NOT LAUNCH");
 }
 // add logic below to verify the total mass does not exceed the maximum limit of 850000
+if (totalMassKg <= maximumMassLimit) {
+    console.log("Total mass is within range: Launch!");
+} else if (totalMassKg > maximumMassLimit) {
+    console.log("Total mass is too heavy: DO NOT LAUNCH");
+}
 
 // add logic below to verify the fuel temperature is within the appropriate range of -150 and -300
 
