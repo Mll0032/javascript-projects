@@ -34,4 +34,24 @@ if (shuttleSpeed > 17500) {
 
 // 4) PREDICT: Do the code blocks shown in the 'predict.txt' file produce the same result?
 
-console.log(/* "Yes" or "No" */);
+//the starting if statement is testing to see if all 3 condition are true then print all systems go
+//the else clause says to otherwise print warning. Not ready.
+//if (crewStatus && computerStatusCode === 200 && spaceSuitsOn) {
+    //console.log("all systems go");
+ //} else {
+ //   console.log("WARNING. Not ready");
+ //}
+
+
+//the first if statement here is checking to see if any of the condition here are true 
+//!crewSatus here is true but the not operator would be asking if crewstatus if not true 
+//then print Warning. Not ready. same thing for the other variables
+// if (!crewStatus || computerStatusCode !== 200 || !spaceSuitsOn) {
+//    console.log("WARNING. Not ready");
+//} else {
+//    console.log("all systems go");
+// }
+
+//It looks like these statement are doing the same thing but in reverse order one is checking to see
+//if variables are true the other is if variables are false
+console.log("Yes");
