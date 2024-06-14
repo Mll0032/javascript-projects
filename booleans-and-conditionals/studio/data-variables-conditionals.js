@@ -9,7 +9,7 @@ let fuelMassKg = 760000;
 let shuttleMassKg = 74842.31;
 let totalMassKg = crewMassKg + fuelMassKg + shuttleMassKg;
 let maximumMassLimit = 850000;
-let fuelTempCelsius = -225;
+let fuelTempCelsius = -300;
 let minimumFuelTemp = -300;
 let maximumFuelTemp = -150; 
 let fuelLevel = 100;
@@ -37,7 +37,11 @@ if (totalMassKg <= maximumMassLimit) {
 }
 
 // add logic below to verify the fuel temperature is within the appropriate range of -150 and -300
-
+if (fuelTempCelsius <= minimumFuelTemp || fuelTempCelsius >= maximumFuelTemp) {
+    console.log("Fuel temperature not in range: DO NOT LAUNCH!");
+} else if (fuelTempCelsius > minimumFuelTemp && fuelTempCelsius < maximumFuelTemp ) {
+    console.log("Fuel temperature is in range: Launch!");
+}
 // add logic below to verify the fuel level is at 100%
 
 // add logic below to verify the weather status is clear
