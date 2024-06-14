@@ -43,7 +43,11 @@ if (fuelTempCelsius <= minimumFuelTemp || fuelTempCelsius >= maximumFuelTemp) {
     console.log("Fuel temperature is in range: Launch!");
 }
 // add logic below to verify the fuel level is at 100%
-
+if (fuelLevel === 100) {
+    console.log("Fuel level is at 100%")
+} else {
+    console.log("Fuel level is not full")
+}
 // add logic below to verify the weather status is clear
 
 // Verify shuttle launch can proceed based on above conditions
