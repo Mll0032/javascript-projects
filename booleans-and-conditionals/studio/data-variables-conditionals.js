@@ -13,7 +13,7 @@ let fuelTempCelsius = -300;
 let minimumFuelTemp = -300;
 let maximumFuelTemp = -150; 
 let fuelLevel = 100;
-let weatherStatus = " Not clear";
+let weatherStatus = "clear";
 let preparedForLiftOff = true;
 
 // add logic below to verify total number of astronauts for shuttle launch does not exceed 7
