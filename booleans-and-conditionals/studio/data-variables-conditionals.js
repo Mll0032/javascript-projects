@@ -13,7 +13,7 @@ let fuelTempCelsius = -300;
 let minimumFuelTemp = -300;
 let maximumFuelTemp = -150; 
 let fuelLevel = 100;
-let weatherStatus = "clear";
+let weatherStatus = " Not clear";
 let preparedForLiftOff = true;
 
 // add logic below to verify total number of astronauts for shuttle launch does not exceed 7
@@ -44,10 +44,14 @@ if (fuelTempCelsius <= minimumFuelTemp || fuelTempCelsius >= maximumFuelTemp) {
 }
 // add logic below to verify the fuel level is at 100%
 if (fuelLevel === 100) {
-    console.log("Fuel level is at 100%")
+    console.log("Fuel level is at 100%");
 } else {
-    console.log("Fuel level is not full")
+    console.log("Fuel level is not full");
 }
 // add logic below to verify the weather status is clear
-
+if (weatherStatus === "clear") {
+    console.log("Weather is clear");
+} else {
+    console.log("Weather is not clear");
+}
 // Verify shuttle launch can proceed based on above conditions
