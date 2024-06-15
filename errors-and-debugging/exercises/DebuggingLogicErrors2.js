@@ -2,7 +2,7 @@
 // Consider the first if/else block below. 
 // Add console.log(launchReady) after this block, then run the program.
 
-//Given the fuelLevel value, should launchReady be true or false after the check?  Is the program behaving as expected?
+//Given the fuelLevel value, should launchReady be true or false after the check?  Is the program behaving as expected? Yes the first if statement failed and moved to the else statment which made sure since it did not pass the first launchReady returend false.
 
 let launchReady = false;
 let fuelLevel = 17000;
