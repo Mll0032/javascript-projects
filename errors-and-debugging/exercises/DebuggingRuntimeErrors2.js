@@ -9,7 +9,7 @@ if (fuelLevel >= 20000) {
    launchReady = false;
 }
 
-if (!launchReady) {
+if (launchReady) {
    console.log("10, 9, 8...");
    console.log("Fed parrot...");
    console.log("6, 5, 4...");
