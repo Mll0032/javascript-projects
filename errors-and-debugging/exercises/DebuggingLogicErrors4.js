@@ -2,7 +2,7 @@
 // Run the code and examine the output. 
 
 // Given the values for fuelLevel, crewStatus and computerStatus, should launchReady be true or false?
-// Is the program behaving as expected?
+// Is the program behaving as expected? Not really the launchReady variable is being changed becuase it is in both if loops. launchready should be false becuase of insufficient fuel.
 
 let launchReady = false;
 let fuelLevel = 17000;
