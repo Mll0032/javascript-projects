@@ -19,4 +19,3 @@ if (!launchReady) {
 } else {
    console.log("Launch scrubbed.");
 }
-console.log(launchReady);
