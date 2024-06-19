@@ -34,7 +34,12 @@ console.log("CAT found");
 }
 
 //3) Use .slice() to print out the fifth gene (set of 3 characters) from the DNA strand.
+console.log(dnaTrim.slice(16,19));
 
 //4) Use a template literal to print, "The DNA strand is ___ characters long."
+let dnaLength = [dnaTwo.length-12];
+
+console.log(`The DNA strand is ${dnaLength} characters long.`);
 
 //5) Just for fun, apply methods to ``dna`` and use another template literal to print, 'taco cat'.
+console.log(`${dna.slice(4,7).toLocaleLowerCase()}o ${dna.slice(40,43).toLowerCase()}`);
