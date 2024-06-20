@@ -57,7 +57,7 @@ function commaSpace() {
   }
 	return output;
 }
-commaSpace()
+
 // NOTE: Don't add or modify any code below this line or your program might not run as expected.
 module.exports = {
 	strings : strings, 
