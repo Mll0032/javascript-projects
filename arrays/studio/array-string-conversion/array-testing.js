@@ -8,42 +8,56 @@ strings = [protoArray1, protoArray2, protoArray3, protoArray4];
 //2) 
 function reverseCommas() {
 	//TODO: 1. create and instantiate your variables.
-	let check;
-	let output;
+	let check = false ;
+	let output = "";
 	//TODO: 2. write the code required for this step
-
+	if (protoArray1.includes(',')){
+	check = true
+	output = protoArray1.split(',').reverse().join(',');
+	console.log(output);
+}
 	//NOTE: For the code to run properly, you must return your output.  this needs to be the final line of code within the function's { }.
-	return output;
+	return output; 
 }
 
 //3)
 function semiDash() {
-	let check;
-	let output;
+	let check = false;
+	let output = "";
 //TODO: write the code required for this step
-
+if(protoArray2.includes(';')){
+	check = true
+	output = protoArray2.split(';').reverse().join(';');
+	console.log(output);
+}
   
 	return output;
 }
 
 //4)
 function reverseSpaces() {
-	let check;
-	let output;
+	let check = false;
+	let output = "";
   //TODO: write the code required for this step
-
+if(protoArray3.includes(" ")){
+	output = protoArray3.split(' ').reverse().join(' ');
+	console.log(output)
+}
 	return output;
 }
 
 //5)
 function commaSpace() {
-	let check;
-	let output;
+	let check = false;
+	let output = "";
 	//TODO: write the code required for this step
-  
+  if(protoArray4.includes(', ')){
+	output = protoArray4.split(', ').reverse().join(',');
+	console.log(output);
+  }
 	return output;
 }
-
+commaSpace()
 // NOTE: Don't add or modify any code below this line or your program might not run as expected.
 module.exports = {
 	strings : strings, 
