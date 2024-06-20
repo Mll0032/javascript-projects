@@ -27,7 +27,7 @@ function semiDash() {
 //TODO: write the code required for this step
 if(protoArray2.includes(';')){
 	check = true
-	output = protoArray2.split(';').reverse().join(';');
+	output = protoArray2.split(';').sort().join('-');
 	console.log(output);
 }
   
@@ -40,7 +40,7 @@ function reverseSpaces() {
 	let output = "";
   //TODO: write the code required for this step
 if(protoArray3.includes(" ")){
-	output = protoArray3.split(' ').reverse().join(' ');
+	output = protoArray3.split(' ').sort().reverse().join(' ');
 	console.log(output)
 }
 	return output;
