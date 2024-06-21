@@ -12,8 +12,11 @@ console.log("Letter Relocation Program");
 let userEnteredNum = input.question("Input number of letters to be relocated: ");
 
 //3) Add validation to your code to deal with user inputs that are longer than the word. In such cases, default to moving 3 characters. Also, the template literal should note the error.
-if (userEnteredNum > 10) {
-   console.log(`Your number is ${userEnteredNum} which is absurd and also is longer than the word, nothing will happen!`);
+if (userEnteredNum > str.length) {
+   console.log(`Your number is ${userEnteredNum} which is absurd and also is longer than the word, nothing will happen! Defaulting to Moving 3 Characters`);
+let holdStr = (str.slice(0,3));
+let newStr = str.slice(3,10)+`${holdStr}`;
+console.log(newStr)
 } else {
 let userHoldStr = (str.slice(0,userEnteredNum));
 let userInputNum = (str.slice(0,userEnteredNum ));
