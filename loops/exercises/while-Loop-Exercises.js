@@ -53,14 +53,20 @@ let shuttleAlt = "";
 //}else {
 //  console.log("Not enough Fuel!");
 //}
-
-
-
-
 //b. Use a second loop to query the user for the number of astronauts (up to a maximum of 7). Validate the entry.
-  
-  
-  
+const maxNumAstnts = 7;
+numOfAstnts = Number(input.question("How many astronauts are there onboard? "));
+
+while (numOfAstnts <= 0 || numOfAstnts > 7 || isNaN(numOfAstnts)) {
+  if (numOfAstnts <= 0 || isNaN(numOfAstnts)) {
+    numOfAstnts = Number(input.question("You cannot have negative or non-numeric number of astronauts! Please resubmit: "));
+} else if (numOfAstnts > 7) {
+  let numToEject = numOfAstnts - maxNumAstnts
+    numOfAstnts = Number(input.question(`You have too many astonauts onboard! Please eject ${numToEject}: `));
+}
+}
+
+console.log(`You have the perfect ammount of astronauts: ${numOfAstnts}`);
   
 //c. Use a final loop to monitor the fuel status and the altitude of the shuttle. Each iteration, decrease the fuel level by 100 units for each astronaut aboard. Also, increase the altitude by 50 kilometers.
 
