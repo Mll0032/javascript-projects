@@ -1,3 +1,4 @@
+//node solutions.js
 const input = require('readline-sync');
 
 // Part A: #1 Populate these arrays
@@ -8,11 +9,17 @@ let veggies = [];
 let beverages = [];
 let desserts = [];
 
+protein.push['chicken', 'pork', 'tofu', 'beef', 'fish', 'beans'];
+grains.push['rice', 'pasta', 'corn', 'potato', 'quinoa', 'crackers'];
+veggies.push['peas', 'green beans', 'kale', 'edamame', 'broccoli', 'asparagus'];
+beverages.push['juice', 'milk', 'water', 'soy milk', 'soda', 'tea'];
+desserts.push['apple', 'banana', 'more kale', 'ice cream', 'chocolate', 'kiwi'];
 
 function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
   let pantry = [protein, grains, veggies, beverages, desserts];
   let meals = [];
-  
+  let numMeals = input.question("How many crew members do we nead meals for? ");
+  for ( let enterMeals = 0; numMeals 
   /// Part A #2: Write a ``for`` loop inside this function
   /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
 
