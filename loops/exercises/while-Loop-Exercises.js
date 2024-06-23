@@ -8,32 +8,48 @@ let shuttleAlt = "";
 
 /*Exercise #4: Construct while loops to do the following:
   a. Query the user for the starting fuel level. Validate that the user enters a positive, integer value greater than 5000 but less than 30000. */
-let startingFuel = Number(input.question("How much starting fuel do you have? "));
+ fuelLevel = Number(input.question("How much starting fuel do you have? "));
 
-
-while (startingFuel <=0){
-  startingFuel = input.question("You cannot have negative fuel! Please resubmit fuel level: ")
-}
- 
-while (startingFuel < 5000){
-  console.log("You do not have enough fuel!"); 
-  if (startingFuel <=5000){
-    break;
-}
-}
-
-while (startingFuel > 30000){
-  console.log("You have too much fuel!"); 
-  if (startingFuel >= 30000){
-  break
+  // Continuously prompt the user until they enter a valid value
+  while (fuelLevel <= 5000 || fuelLevel >= 30000 || isNaN(fuelLevel)) {
+      if (fuelLevel <= 0 || isNaN(fuelLevel)) {
+          fuelLevel = Number(input.question("You cannot have negative or non-numeric fuel! Please resubmit fuel level: "));
+      } else if (fuelLevel < 5000) {
+          fuelLevel = Number(input.question("You do not have enough fuel! Please resubmit fuel level: "));
+      } else if (fuelLevel >= 30000) {
+          fuelLevel = Number(input.question("You have too much fuel! Please resubmit fuel level: "));
+      }
   }
-}
+  
+  console.log(`Valid starting fuel level: ${fuelLevel}`);
 
-//if (startingFuel > 5000 && startingFuel < 30000){
+//using seperate while loops
+//while (fuelLevel <=0){
+//  fuelLevel = input.question("You cannot have negative fuel! Please resubmit fuel level: ")
+//}
+ 
+//while (fuelLevel < 5000){
+//  fuelLevel = input.question("You do not have enough fuel! Please resubmit fuel level: ") 
+//  if (fuelLevel <=5000){
+//    break;
+//}
+//}
+
+//while (fuelLevel > 30000){
+//  fuelLevel = input.question("You have too much fuel! Please resubmit fuel level: ")
+//  if (fuelLevel >= 30000){
+//  break
+//  }
+//}
+
+//using if statemets to get the result
+//if (fuelLevel > 5000 && fuelLevel < 30000){
 //  console.log("Acceptable fuel Level");
-//} else if (startingFuel < 0){
+//} else if (fuelLevel < 0){
 //  console.log("Im sorry you can not have negative fuel!");
-//  let startingFuel = Number(input.question("How much starting fuel do you have? "));
+//  let fuelLevel = Number(input.question("How much starting fuel do you have? "));
+//} else if (fuelLevel > 30000)
+//  console.log("You have too much fuel!");
 //}else {
 //  console.log("Not enough Fuel!");
 //}
