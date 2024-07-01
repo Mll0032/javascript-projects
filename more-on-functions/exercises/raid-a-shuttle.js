@@ -24,6 +24,19 @@ let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
 
+let nonSuspiciousFunction = function(fuelLevel) {
+  if (checkFuel(fuelLevel) === 'green') {
+    return fuelLevel - 100001;
+  } else if (checkFuel(fuelLevel) === 'yellow') {
+    return fuelLevel - 50001;
+  } else {
+    return fuelLevel;
+  }
+};
+
+fuelLevel = nonSuspiciousFunction(fuelLevel);
+console.log("Adjusted Fuel Level: " + fuelLevel);
+console.log("Fuel Level Status: " + checkFuel(fuelLevel)); 
 /* Steal some fuel from the shuttle:
  * /
  
@@ -37,6 +50,8 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 /* Next, liberate some of that glorious cargo.
  * /
+
+
 
 //a). Define another anonymous function with an array as a parameter, and set it equal to another innocent variable.
 
@@ -54,4 +69,23 @@ console.log("Hold status: " + holdStatus(cargoHold));
 //b). Call your anonymous fuel and cargo functions from within irs.
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
+*/ 
+function holdStatus(arr) {
+  if (arr.length < 7) {
+    return `Spaces available: ${7 - arr.length}`;
+  } else if (arr.length > 7) {
+    return `Over capacity by ${arr.length - 7} items.`;
+  } else {
+    return "Full";
+  }
+}
+
+let deckMops = function(cargoHold) {
+  let stolenItems = cargoHold.splice(0, 2, 'worthless item 1', 'worthless item 2');
+  return stolenItems;
+};
+
+let stolenItems = deckMops(cargoHold);
+console.log("Stolen Items: " + stolenItems); // Output: ['meal kits', 'space suits']
+console.log("Updated Cargo Hold: " + cargoHold); // Output: ['worthless item 1', 'worthless item 2', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit']
 
