@@ -16,3 +16,11 @@ for (item in tortoiseOne) {
 
 console.log(tortoiseOne.sign());
 
+function updateAge(animal) {
+   animal.age = animal.age + 1
+   return animal;
+}
+
+console.log(tortoiseOne.age);
+updateAge(tortoiseOne);
+console.log(tortoiseOne.age);
