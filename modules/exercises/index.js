@@ -2,14 +2,12 @@
 //Import readline-sync.
 const input = require('readline-sync');
 //Import functions from averages.js.
-const averages = require('../averages.js');
+const averages = require('./ScoreCalcs/averages.js');
 //Import function from display.js.
 const printAll = require('./display.js');
 //Import function from randomSelect.js.
-const randomSelect = require('randomSelect.js');
+const randomSelect = require('./randomSelect.js');
 const { averageForTest } = require('./ScoreCalcs/averages');
-
-let randomSelect = randomSelect.js
 
 //Candidate data:
 let astronauts = ['Fox','Turtle','Cat','Hippo','Dog'];
