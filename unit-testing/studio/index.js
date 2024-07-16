@@ -21,6 +21,8 @@ let launchcode = {
       return 'Code!';
     } else if (num % 5 === 0 && num % 2 !== 0 && num % 3 !== 0) {
       return 'Rocks!';
+    } else if (num % 2 !== 0 && num % 3 !== 0 && num % 5 !== 0) {
+      return "Rutabagas! That doesn't work.";
     }
   }
 };

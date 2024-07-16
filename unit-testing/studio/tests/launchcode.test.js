@@ -45,6 +45,9 @@ describe('launchcode object', function() {
     expect(launchcode.launchOutput(30)).toBe('LaunchCode Rocks!');
     expect(launchcode.launchOutput(60)).toBe('LaunchCode Rocks!');
   });
+  it("should return 'Rutabagas! That does't work.' when passed a number divisible by 2, 3, and 5", function() {
+    expect(launchcode.launchOutput(29)).toBe("Rutabagas! That doesn't work.");
+  });
 });
 
 
