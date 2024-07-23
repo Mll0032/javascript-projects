@@ -5,7 +5,7 @@ class CrewCandidate {
        this.mass = mass;
        this.score = score;
     }
-    addScore(scores = '') {
+    addScore(scores) {
         this.score.push(scores);
      }
     average() {
@@ -61,7 +61,9 @@ let gladG = new CrewCandidate('Glad Gator', '225 kg', [75, 78, 62]);
 // console.log(merryM.average());
 
 //test to see if Bubb Bear accepted, resever, probation, rejected
-//console.log(bubbaB.determineStatus())
+// console.log(bubbaB.determineStatus());
+// console.log(merryM.determineStatus());
+// console.log(gladG.determineStatus());
 
 //Add methods for adding scores, averaging scores and determining candidate status as described in the studio activity.
 
