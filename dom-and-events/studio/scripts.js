@@ -1,5 +1,3 @@
-// Write your JavaScript code here.
-// Remember to pay attention to page loading!
 window.addEventListener("load", function() {
     const takeoffButton = document.getElementById("takeoff");
     const landingButton = document.getElementById("landing");
@@ -9,6 +7,7 @@ window.addEventListener("load", function() {
     const shuttleBackground = document.getElementById("shuttleBackground");
     const spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
     const rocket = document.getElementById("rocket");
+    const rocketCoordinates = document.getElementById("rocketCoordinates");
 
     const upButton = document.getElementById("up");
     const downButton = document.getElementById("down");
@@ -23,8 +22,49 @@ window.addEventListener("load", function() {
         const rocketHeight = rocket.clientHeight;
         const rocketWidth = rocket.clientWidth;
 
-        rocket.style.top = `${(shuttleBackgroundHeight - rocketHeight) + 20}px`;
+        rocket.style.top = `${shuttleBackgroundHeight - rocketHeight}px`;
         rocket.style.left = `${(shuttleBackgroundWidth - rocketWidth) / 2}px`;
+
+        updateCoordinates();
+    }
+
+    function updateCoordinates() {
+        const currentX = rocket.offsetLeft;
+        const currentY = rocket.offsetTop;
+        rocketCoordinates.innerHTML = `X: ${currentX}, Y: ${currentY}`;
+    }
+
+    function moveRocket(xChange, yChange) {
+        const currentX = rocket.offsetLeft;
+        const currentY = rocket.offsetTop;
+        const rocketHeight = rocket.clientHeight;
+        const rocketWidth = rocket.clientWidth;
+        const shuttleBackgroundHeight = shuttleBackground.clientHeight;
+        const shuttleBackgroundWidth = shuttleBackground.clientWidth;
+
+        const newX = currentX + xChange;
+        const newY = currentY + yChange;
+
+        // Boundary checks
+        if (newX >= 0 && newX <= (shuttleBackgroundWidth - rocketWidth)) {
+            rocket.style.left = `${newX}px`;
+        }
+        if (newY >= 0 && newY <= (shuttleBackgroundHeight - rocketHeight)) {
+            rocket.style.top = `${(newY)}px`;
+        }
+
+        updateCoordinates();
+    }
+
+    function landRocket() {
+        const currentX = rocket.offsetLeft;
+        const shuttleBackgroundHeight = shuttleBackground.clientHeight;
+        const rocketHeight = rocket.clientHeight;
+
+        rocket.style.top = `${shuttleBackgroundHeight - rocketHeight}px`; // Align bottom
+        rocket.style.left = `${currentX}px`; // Maintain current x position
+
+        updateCoordinates();
     }
 
     initializeRocketPosition();
@@ -45,6 +85,7 @@ window.addEventListener("load", function() {
         shuttleBackground.style.backgroundColor = "green";
         shuttleHeight = 0;
         spaceShuttleHeight.innerHTML = shuttleHeight;
+        landRocket();
     });
 
     abortButton.addEventListener("click", function() {
@@ -53,6 +94,7 @@ window.addEventListener("load", function() {
             shuttleBackground.style.backgroundColor = "green";
             shuttleHeight = 0;
             spaceShuttleHeight.innerHTML = shuttleHeight;
+            initializeRocketPosition();
         }
     });
 
@@ -75,11 +117,4 @@ window.addEventListener("load", function() {
     leftButton.addEventListener("click", function() {
         moveRocket(-10, 0);
     });
-
-    function moveRocket(xChange, yChange) {
-        const currentX = rocket.offsetLeft;
-        const currentY = rocket.offsetTop;
-        rocket.style.left = `${currentX + xChange}px`;
-        rocket.style.top = `${currentY + yChange}px`;
-    }
 });
