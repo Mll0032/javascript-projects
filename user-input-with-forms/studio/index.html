@@ -1,19 +1,85 @@
 <!doctype html>
-
+<html>
 <head>
-	<meta charset="utf-8">
-	<script>
-		// TODO: create a handler
-    window.addEventListener("load", function(){
-        // TODO: register the handler
-    });
-	</script>
+    <meta charset="utf-8">
+    <title>Search Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Function to handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form elements
+            const searchTerm = document.getElementById('searchTerm').value;
+            const searchTypeElement = document.querySelector('input[name="engine"]:checked');
+
+            // Validate inputs
+            if (!searchTerm) {
+                alert("Please enter a search term.");
+                return;
+            }
+
+            if (!searchTypeElement) {
+                alert("Please select a search engine.");
+                return;
+            }
+
+            const searchType = searchTypeElement.value;
+
+            // Determine the URL based on the selected search engine
+            let searchURL;
+            switch (searchType) {
+                case 'Google':
+                    searchURL = `https://www.google.com/search?q=${encodeURIComponent(searchTerm)}`;
+                    break;
+                case 'DuckDuckGo':
+                    searchURL = `https://duckduckgo.com/?q=${encodeURIComponent(searchTerm)}`;
+                    break;
+                case 'Bing':
+                    searchURL = `https://www.bing.com/search?q=${encodeURIComponent(searchTerm)}`;
+                    break;
+                default:
+                    alert("Invalid search engine selected.");
+                    return;
+            }
+
+            // Log the search URL (or you could navigate to it)
+            console.log("Search URL:", searchURL);
+
+            // Optionally, redirect to the search URL
+            window.location.href = searchURL;
+        }
+
+        // Register the handler when the page loads
+        window.addEventListener("load", function() {
+            const form = document.getElementById('searchForm');
+            form.addEventListener('submit', handleFormSubmit);
+        });
+    </script>
 </head>
 
 <body>
+    <form id="searchForm">
+        <!-- Text input for search term -->
+        <label for="searchTerm">Search Term:</label>
+        <input type="text" id="searchTerm" name="q" placeholder="Enter Search" required>
+        
+        <!-- Radio buttons for search type -->
+        <fieldset>
+            <legend>Search Type:</legend>
+            <label>
+                <input type="radio" name="engine" value="Google"> Google
+            </label>
+            <label>
+                <input type="radio" name="engine" value="DuckDuckGo"> DuckDuckGo
+            </label>
+            <label>
+                <input type="radio" name="engine" value="Bing"> Bing
+            </label>
+        </fieldset>
 
-	<form id="searchForm">
-    <!-- TODO: add form elements -->
-	</form>
-
+        <!-- Submit button -->
+        <button type="submit">GO!</button>
+    </form>
 </body>
+</html>
